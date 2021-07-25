@@ -10,8 +10,8 @@ import "@storybook/addon-ondevice-actions/register";
 
 import { argsEnhancers } from '@storybook/addon-actions/dist/modern/preset/addArgs';
 
-import { decorators, parameters } from './.storybook/preview';
 
+import { decorators, parameters } from './.storybook/preview';
 argsEnhancers.forEach(enhancer => addArgsEnhancer(enhancer))
 if (decorators) {
   decorators.forEach((decorator) => addDecorator(decorator));

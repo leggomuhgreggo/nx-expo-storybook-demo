@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-expo-storybook",
+  "version": "0.0.1",
+  "generators": {
+    "nx-expo-storybook": {
+      "factory": "./src/generators/nx-expo-storybook/generator",
+      "schema": "./src/generators/nx-expo-storybook/schema.json",
+      "description": "nx-expo-storybook generator"
+    }
+  }
+}

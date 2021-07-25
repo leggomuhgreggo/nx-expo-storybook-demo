@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@expo-storybook/nx-expo-storybook": [
+        "libs/nx-expo-storybook/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

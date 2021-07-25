@@ -29,6 +29,13 @@
   "projects": {
     "expo-test-app": {
       "tags": []
+    },
+    "nx-expo-storybook": {
+      "tags": []
+    },
+    "nx-expo-storybook-e2e": {
+      "tags": [],
+      "implicitDependencies": ["nx-expo-storybook"]
     }
   }
 }

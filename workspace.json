@@ -52,6 +52,74 @@
           }
         }
       }
+    },
+    "nx-expo-storybook": {
+      "root": "libs/nx-expo-storybook",
+      "sourceRoot": "libs/nx-expo-storybook/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/nx-expo-storybook/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/nx-expo-storybook"],
+          "options": {
+            "jestConfig": "libs/nx-expo-storybook/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/nx-expo-storybook",
+            "tsConfig": "libs/nx-expo-storybook/tsconfig.lib.json",
+            "packageJson": "libs/nx-expo-storybook/package.json",
+            "main": "libs/nx-expo-storybook/src/index.ts",
+            "assets": [
+              "libs/nx-expo-storybook/*.md",
+              {
+                "input": "./libs/nx-expo-storybook/src",
+                "glob": "**/!(*.ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/nx-expo-storybook/src",
+                "glob": "**/*.d.ts",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/nx-expo-storybook",
+                "glob": "generators.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/nx-expo-storybook",
+                "glob": "executors.json",
+                "output": "."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "nx-expo-storybook-e2e": {
+      "root": "apps/nx-expo-storybook-e2e",
+      "projectType": "application",
+      "sourceRoot": "apps/nx-expo-storybook-e2e/src",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/nx-plugin:e2e",
+          "options": {
+            "target": "nx-expo-storybook:build",
+            "jestConfig": "apps/nx-expo-storybook-e2e/jest.config.js"
+          }
+        }
+      }
     }
   },
   "cli": {

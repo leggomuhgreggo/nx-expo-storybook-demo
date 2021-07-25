@@ -31,12 +31,17 @@
           "executor": "nx-react-native-expo:publish",
           "options": {}
         },
+        "prestart": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": ["sbn-get-stories"],
+            "cwd": "apps/expo-test-app"
+          }
+        },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/expo-test-app/**/*.{js,ts,tsx}"
-            ]
+            "lintFilePatterns": ["apps/expo-test-app/**/*.{js,ts,tsx}"]
           }
         },
         "test": {

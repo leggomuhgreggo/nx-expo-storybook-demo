@@ -1,7 +1,56 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "expo-test-app": {
+      "root": "apps/expo-test-app",
+      "sourceRoot": "apps/expo-test-app/src",
+      "projectType": "application",
+      "generators": {},
+      "targets": {
+        "bundle": {
+          "executor": "nx-react-native-expo:bundle",
+          "options": {}
+        },
+        "start": {
+          "executor": "nx-react-native-expo:start",
+          "options": {}
+        },
+        "run-ios": {
+          "executor": "nx-react-native-expo:run-ios",
+          "options": {}
+        },
+        "run-android": {
+          "executor": "nx-react-native-expo:run-android",
+          "options": {}
+        },
+        "run-web": {
+          "executor": "nx-react-native-expo:run-web",
+          "options": {}
+        },
+        "publish": {
+          "executor": "nx-react-native-expo:publish",
+          "options": {}
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/expo-test-app/**/*.{js,ts,tsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/expo-test-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
-  }
+  },
+  "defaultProject": "expo-test-app"
 }

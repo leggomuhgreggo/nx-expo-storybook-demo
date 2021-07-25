@@ -1,6 +1,6 @@
 # Nx Expo + Storybook React Native
 
-Works on iOS, and Android (but obscured by status bar). Web doesn't work, yet -- not does MDX style Stories.
+Works on iOS, and Android (but obscured by status bar). Web doesn't work, yet -- nor does MDX style stories.
 
 Note: Also works with bare-bones RN apps very handily!
 
@@ -51,3 +51,11 @@ Add the `prestart` command from the `storybookjs/react-native `instructions as a
           }
         },
 ```
+
+## Next Steps
+
+- [ ] try with library
+- [ ] try with root level config inheritance (like @nrwl/storybook)
+- [ ] look into MDX support
+- [ ] look into web support
+- [ ] create generator/schematic?
